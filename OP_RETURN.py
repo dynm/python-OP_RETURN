@@ -156,7 +156,7 @@ def OP_RETURN_store(data, testnet=False):
 	
 		outputs={}
 		if change_amount>=OP_RETURN_BTC_DUST: # might be skipped for last transaction
-			outputs[change_address]=change_amount
+			outputs[change_address]="{:10.8f}".format(change_amount)
 			
 		raw_txn=OP_RETURN_create_txn(inputs, outputs, metadata, len(outputs) if last_txn else 0, testnet)
 		
